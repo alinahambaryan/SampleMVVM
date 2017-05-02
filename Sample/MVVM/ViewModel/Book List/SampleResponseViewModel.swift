@@ -11,16 +11,15 @@ import RxSwift
 import Alamofire
 import UIKit
 
-class SampleResponseViewModel: ViewModel<SampleResponseService> {
+public class SampleResponseViewModel: ViewModel<SampleResponseServicing> {
     
-    var title = Variable<String>("")
-    var image = Variable<UIImage?>(nil)
+    public var title = Variable<String>("")
+    public var image = Variable<UIImage?>(nil)
+    public var limit = Variable<Int>(1)
+    public var page = Variable<Int>(1)
     let cellViewModels = Variable<[BookCellViewModel]>([])
-    var limit = Variable<Int>(1)
-    var page = Variable<Int>(1)
-    let loadingNextPage = Variable(false)
 
-    override init(service: SampleResponseService) {
+    public override init(service: SampleResponseServicing) {
         super.init(service: service)
         
         fetchConsumables(limit: self.limit.value, page: self.page.value)

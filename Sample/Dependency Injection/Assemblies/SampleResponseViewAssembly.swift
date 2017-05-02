@@ -14,7 +14,7 @@ public class SampleResponseViewAssembly: Assembly {
     
     public func assemble(container: Container) {
         container.register(SampleResponseViewModel.self) { r in
-            SampleResponseViewModel(service: r.resolve(SampleResponseService.self)!)
+            SampleResponseViewModel(service: r.resolve(SampleResponseServicing.self)!)
         }
     }
 }
