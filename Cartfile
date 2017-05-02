@@ -1,0 +1,9 @@
+github "RxSwiftCommunity/RxAlamofire" "master"
+github "thoughtbot/Argo"
+github "Alamofire/Alamofire"
+github "thoughtbot/Curry"
+github "Alamofire/AlamofireImage" ~> 3.1
+github "apegroup/APESuperHUD"
+github "Swinject/Swinject" ~> 2.0.0
+github "Swinject/SwinjectStoryboard" ~> 1.0.0
+github "ReactiveX/RxSwift" ~> 3.0

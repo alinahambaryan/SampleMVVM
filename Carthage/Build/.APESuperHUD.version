@@ -1,0 +1,10 @@
+{
+  "xcodeVersion" : "Xcode 8.3.2\nBuild version 8E2002",
+  "commitish" : "1.1.2",
+  "iOS" : [
+    {
+      "hash" : "5f649e5bca94e9820ae660bae1a17f69178425f17f8bad640f9c6140beadc923",
+      "name" : "APESuperHUD"
+    }
+  ]
+}

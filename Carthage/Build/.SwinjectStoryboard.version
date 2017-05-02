@@ -1,0 +1,10 @@
+{
+  "xcodeVersion" : "Xcode 8.3.2\nBuild version 8E2002",
+  "commitish" : "1.1.1",
+  "iOS" : [
+    {
+      "hash" : "d3ca7365155af4c52479add3bd0821e1e66e99bbc0ee18d77f6732bc08734776",
+      "name" : "SwinjectStoryboard"
+    }
+  ]
+}

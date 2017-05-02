@@ -1,0 +1,10 @@
+{
+  "xcodeVersion" : "Xcode 8.3.2\nBuild version 8E2002",
+  "commitish" : "v4.0.1",
+  "iOS" : [
+    {
+      "hash" : "cae6f3ded091ae630ce92ea1d941a10b38cc9821a36507a69311de58bc39b528",
+      "name" : "Runes"
+    }
+  ]
+}

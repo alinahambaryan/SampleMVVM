@@ -1,0 +1,10 @@
+{
+  "xcodeVersion" : "Xcode 8.3.2\nBuild version 8E2002",
+  "commitish" : "3.2.0",
+  "iOS" : [
+    {
+      "hash" : "91165967c7ea322da8dfe269a33402060188d68b9ca1b7bd8882f42ee38a2bfe",
+      "name" : "AlamofireImage"
+    }
+  ]
+}
