@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import RxSwift
 @testable import Sample
 
 class SampleResponseViewModelTest: XCTestCase {
