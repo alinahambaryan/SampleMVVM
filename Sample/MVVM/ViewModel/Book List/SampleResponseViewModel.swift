@@ -9,7 +9,6 @@
 import Foundation
 import RxSwift
 import Alamofire
-import AlamofireImage
 import UIKit
 
 class SampleResponseViewModel: ViewModel<SampleResponseService> {
