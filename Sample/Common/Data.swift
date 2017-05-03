@@ -13,8 +13,8 @@ import Runes
 
 class DataSource{
     
-    static func fetchSampleRequest(limit:Int, page:Int, completionHandler: @escaping (SampleResponse?, Error?) -> ()){
-        let urlString = Constants.URLs.sampleURL + String(limit) + "?page=" + String(page)
+    static func fetchSampleRequest(limit:Int, page:String, completionHandler: @escaping (SampleResponse?, Error?) -> ()){
+        let urlString = Constants.URLs.sampleURL + String(limit) + "?page=" + page
         let request = URLRequest(url: URL(string: urlString)!)
         
         Alamofire.request(request).validate().responseJSON { response in

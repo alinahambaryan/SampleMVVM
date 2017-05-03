@@ -24,7 +24,7 @@ class SampleResponseViewModelTest: XCTestCase {
         XCTAssertEqual(testedViewModel.title.value, "Lorem no ipsum lorem rebum ut")
         XCTAssertNotNil(testedViewModel.image.value)
         XCTAssertEqual(testedViewModel.limit.value, 1)
-        XCTAssertEqual(testedViewModel.page.value, 1)
+        XCTAssertEqual(testedViewModel.nextPage.value, "a0c907701bb9482d9878b19d0d3fcb78")
     }
     
     override func tearDown() {

@@ -15,6 +15,7 @@ public struct SampleResponse {
     public let listTitle: String
     public let listCoverURL: String
     public let consumables:[Consumable]
+    public let nextPage: String
 }
 
 extension SampleResponse: Decodable {
@@ -23,5 +24,6 @@ extension SampleResponse: Decodable {
             <^> j <| ["metadata","title"]
             <*> j <| ["metadata","cover","url"]
             <*> j <|| "consumables"
+            <*> j <| "nextPage"
     }
 }

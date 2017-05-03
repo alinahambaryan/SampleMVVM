@@ -17,7 +17,7 @@ public class SampleResponseService {
         self.itemService = itemService
     }
     
-    func readConsumables (limit:Int, page: Int) -> Observable<SampleResponse?> {
+    func readConsumables (limit:Int, page: String) -> Observable<SampleResponse?> {
         return self.itemService.readConsumables(limit:limit, page:page)
     }
 }

@@ -16,23 +16,24 @@ public class SampleResponseViewModel: ViewModel<SampleResponseServicing> {
     public var title = Variable<String>("")
     public var image = Variable<UIImage?>(nil)
     public var limit = Variable<Int>(1)
-    public var page = Variable<Int>(1)
+    public var nextPage = Variable<String>("")
     let cellViewModels = Variable<[BookCellViewModel]>([])
 
     public override init(service: SampleResponseServicing) {
         super.init(service: service)
         
-        fetchConsumables(limit: self.limit.value, page: self.page.value)
+        fetchConsumables(limit: self.limit.value, page: "")
     }
     
-    func fetchConsumables(limit:Int, page:Int) {
-        service.readConsumables(limit: self.limit.value, page: self.page.value)
+    func fetchConsumables(limit:Int, page:String) {
+        service.readConsumables(limit: self.limit.value, page: self.nextPage.value)
             .asObservable()
             .subscribe(onNext: { [unowned self](response) in
                 if let sampleResponse = response {
                     self.title.value = sampleResponse.listTitle
+                    self.nextPage.value = sampleResponse.nextPage
                     self.prepareCoverImage(url: sampleResponse.listCoverURL)
-                    self.prepareCellViewModels(sampleResponse: sampleResponse)
+                    self.prepareCellViewModels(consumables: sampleResponse.consumables)
                 }
                 }, onError: { (error) in
                     print(error.localizedDescription)
@@ -42,8 +43,10 @@ public class SampleResponseViewModel: ViewModel<SampleResponseServicing> {
             }.addDisposableTo(disposeBag)
     }
     
-    func prepareCellViewModels(sampleResponse: SampleResponse) {
-        self.cellViewModels.value = (sampleResponse.consumables.map {BookCellViewModel(consumable: $0)})
+    func prepareCellViewModels(consumables: [Consumable]) {
+        
+        let newPageConsumables = consumables.map {BookCellViewModel(consumable: $0)}
+        self.cellViewModels.value.append(contentsOf: newPageConsumables)
     }
     
     func prepareCoverImage(url:String) {

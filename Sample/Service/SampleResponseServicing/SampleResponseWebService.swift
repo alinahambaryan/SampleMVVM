@@ -16,16 +16,15 @@ public class SampleResponseWebService : SampleResponseServicing {
 
     public init() {}
     
-    public func readConsumables(limit: Int, page: Int) -> Observable<SampleResponse?> {
+    public func readConsumables(limit: Int, page: String) -> Observable<SampleResponse?> {
         return Observable.create { observer in
             DataSource.fetchSampleRequest(limit: limit, page: page, completionHandler: { (response, error) in
                 if error != nil {
-                    fatalError("OPSS: \(String(describing: error))")
+                    observer.onError(error!)
                 }
                 observer.onNext(response)
             })
-            return Disposables.create {
-            }
+            return Disposables.create {}
         }
     }
 }
